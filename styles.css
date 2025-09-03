@@ -1,0 +1,124 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -01; /* To place particles behind other content */
+  background-color: #000000; /* Example dark background */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: top; 
+    min-height: 100vh;
+}
+
+header {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.210), rgba(255, 255, 255, 0.210));
+    position: fixed;
+    border-radius: 15px;
+    height: 110px;
+    font-family: "Roboto";
+    font-size: 3em;
+    margin: auto;
+    padding-right: 3em;
+    z-index: 10;
+}
+
+header a {
+    text-decoration: none;
+    letter-spacing: 5px;
+    margin: 40px;
+    line-height: 95px;
+    color: white;
+}
+
+.glow-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F2F2F2;
+  text-shadow:
+    0 0 5px #F2F2F2,
+    0 0 10px #D9D9D9,
+    0 0 15px #BFBFBF,
+    0 0 20px #8C8C8B,
+    0 0 30px #737272;
+
+  /* Adiciona a transição para uma animação suave */
+  transition: text-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+}
+
+/* O que acontece quando você passa o mouse por cima */
+.glow-text:hover {
+  color: #fff; /* Aumenta o brilho da cor do texto */
+  text-shadow:
+    0 0 10px #fff,  /* Aumenta o brilho e o espalhamento */
+    0 0 20px #F2F2F2,
+    0 0 30px #D9D9D9,
+    0 0 40px #BFBFBF,
+    0 0 50px #8C8C8B;
+}
+
+/* Aplica apenas quando o mouse estiver sobre o link */
+header a:hover i {
+    animation: fa-bounce 2s infinite; /* Ativa a animação */
+    --fa-bounce-height: -0.2em; /* Altura do pulo */
+    --fa-bounce-jump-scale-x: 1;
+    --fa-bounce-jump-scale-y: 1;
+    --fa-bounce-land-scale-x: 1.2; /* Efeito "squish" na horizontal */
+    --fa-bounce-land-scale-y: 0.8; /* Efeito "squish" na vertical */
+    --fa-bounce-rebound: 5px; /* Rebound */
+
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Esta propriedade posiciona a linha 5px abaixo do link */
+    width: 0; /* Largura inicial zero */
+    height: 2px; /* Altura do sublinhado */
+    background-color: white; /* Cor da linha */
+    transition: width 0.3s ease-out; /* Animação suave */
+}
+
+header a:hover::after {
+    width: 100%; /* Aumenta a largura para 100% no hover */
+}
+
+  a {
+    position: relative;
+    text-decoration: none; /* remove o sublinhado padrão */
+    color: #000;
+    font-size: 20px;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* distância da linha em relação ao texto */
+    width: 0;
+    height: 2px;
+    background-color: #f00;
+    transition: width 0.3s ease;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+
+
