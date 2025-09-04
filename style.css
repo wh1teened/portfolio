@@ -255,3 +255,53 @@ header a::after {
 header a:hover::after {
     width: 100%; /* Aumenta a largura para 100% no hover */
 }
+
+/* Responsividade
+*/
+
+/* Media query para telas menores, como tablets e celulares */
+@media (max-width: 900px) {
+  .home-content {
+    flex-direction: column; /* Empilha o texto e a imagem verticalmente */
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .text-group {
+    max-width: 100%; /* Permite que o texto ocupe toda a largura disponível */
+    text-align: center; /* Centraliza o texto */
+    min-width: unset !important; /* Remove a largura mínima para telas menores */
+  }
+
+  #eu {
+    padding-left: 0; /* Remove o padding em telas menores */
+  }
+
+  section h3 {
+    font-size: 2.5rem; /* Reduz o tamanho da fonte para caber na tela */
+  }
+  
+  .img-about {
+    max-width: 300px; /* Reduz o tamanho da imagem para telas menores */
+  }
+}
+
+/* Media query para telas ainda menores, como celulares */
+@media (max-width: 500px) {
+  header a {
+    font-size: 1rem; /* Reduz o tamanho da fonte do header */
+    padding: 0.5rem 0.8rem;
+  }
+
+  #eu {
+    font-size: 1.5rem;
+  }
+
+  section h3 {
+    font-size: 2rem;
+  }
+
+  section p {
+    font-size: 1.5rem;
+  }
+}
