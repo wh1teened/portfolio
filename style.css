@@ -56,15 +56,35 @@ section {
   height: 100vh; /* ocupa a tela inteira */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   scroll-margin-top: 70px; /* evita que o header fixe sobre o conteúdo */
 }
 
-/* Cores diferentes para cada bloco */
 #home {
   color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row; /* Alinha o texto e a imagem lado a lado */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    gap: 5rem; /* Adiciona um espaço entre o texto e a imagem */
+    width: 80%; /* Define uma largura máxima para o conteúdo */
+    max-width: 1200px;
+}
+
+.text-group {
+    text-align: left; /* Alinha o texto para a esquerda dentro do seu próprio contêiner */
+    max-width: 50%; /* Limita a largura do texto para evitar que ele estique demais */
+}
+
+/* Estilo para a imagem */
+.img-about {
+  max-width: 400px; /* Redimensiona a imagem para não ser muito grande */
+  height: auto;
 }
 
 #about {
