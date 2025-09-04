@@ -1,9 +1,9 @@
 :root {
-  --cor0: #8C8C8B;
-  --cor1: #737272;
-  --cor2: #F2F2F2;
-  --cor3: #D9D9D9;
-  --cor4: #BFBFBF;
+  --cor0: #9F38B0; /* Roxo Vibrante */
+  --cor1: #BE5EE0; /* Roxo Médio */
+  --cor2: #D98CEB; /* Roxo Claro */
+  --cor3: #4B0082; /* Roxo Escuro (Índigo) */
+  --cor4: #993366; /* Roxo Averbado (Malva) */
 }
 
 /* Rolagem suave */
@@ -47,12 +47,12 @@ header {
 }
 
 header a {
-    border-bottom: 1px groove white;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+  border-bottom: 1px groove white;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 header a:hover {
@@ -126,7 +126,7 @@ section {
   position: relative;
   display: inline-block;
   color: transparent;
-  -webkit-text-stroke: .7px #F2F2F2;
+  -webkit-text-stroke: .7px var(--cor2); /* Cor de traço baseada no roxo claro */
   animation: display-text 16s linear infinite;
   animation-delay: calc(-4s * var(--i));
 }
@@ -135,8 +135,8 @@ section {
   content: attr(data-text);
   position: absolute;
   width: 0;
-  border-right: 2px solid #4d4d4b;
-  color: var(--cor1);
+  border-right: 2px solid var(--cor3); /* Roxo Escuro */
+  color: var(--cor1); /* Roxo Médio */
   white-space: nowrap;
   overflow: hidden;
   animation: fill-text 4s linear infinite;
@@ -158,27 +158,36 @@ section {
   }
 }
 
-section h4 {
-    font-size: 1rem;
-    line-height: 50px;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+/* Adicionando a animação de fogo aqui */
+@keyframes fire-glow {
+    0% {
+        text-shadow: 0 0 10px var(--cor0), 0 0 20px var(--cor3);
+        color: var(--cor1);
+    }
+    25% {
+        text-shadow: 0 0 15px var(--cor1), 0 0 25px var(--cor4);
+        color: var(--cor2);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--cor0), 0 0 30px var(--cor3);
+        color: var(--cor1);
+    }
+    75% {
+        text-shadow: 0 0 15px var(--cor1), 0 0 25px var(--cor4);
+        color: var(--cor2);
+    }
+    100% {
+        text-shadow: 0 0 10px var(--cor0), 0 0 20px var(--cor3);
+        color: var(--cor1);
+    }
 }
 
 section h3 {
   font-size: 3.4rem;
   text-align: center;
-  color: purple;
-    text-shadow:
-    0 0 2px #4d0863,
-    0 0 1px #84099c,
-    0 0 3px #94288f,
-    0 0 1px #7f0583,
-    0 0 3px #3a0a86;
-}
-
-imgs {
-
+  color: var(--cor0); /* Roxo Vibrante */
+  /* Aplica a animação de fogo aqui */
+  animation: fire-glow 2s infinite alternate;
 }
 
 section p {
@@ -188,13 +197,13 @@ section p {
 }
 
 .glow-text {
-  color: #F2F2F2;
+  color: var(--cor0); /* Roxo Vibrante */
   text-shadow:
-    0 0 5px #F2F2F2,
-    0 0 10px #D9D9D9,
-    0 0 15px #BFBFBF,
-    0 0 20px #8C8C8B,
-    0 0 30px #737272;
+    0 0 5px var(--cor4),
+    0 0 10px var(--cor3),
+    0 0 15px var(--cor1),
+    0 0 20px var(--cor0),
+    0 0 30px var(--cor2);
 
   /* Adiciona a transição para uma animação suave */
   transition: text-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
@@ -202,13 +211,13 @@ section p {
 }
 
 .glow-text:hover {
-  color: #fff; /* Aumenta o brilho da cor do texto */
+  color: var(--cor0); /* Roxo Vibrante */
   text-shadow:
-    0 0 10px #fff,  /* Aumenta o brilho e o espalhamento */
-    0 0 20px #F2F2F2,
-    0 0 30px #D9D9D9,
-    0 0 40px #BFBFBF,
-    0 0 50px #8C8C8B;
+    0 0 5px var(--cor4),
+    0 0 10px var(--cor3),
+    0 0 15px var(--cor1),
+    0 0 20px var(--cor0),
+    0 0 30px var(--cor2);
 }
 
 header a:hover i {
@@ -223,7 +232,7 @@ header a:hover i {
 }
 
 section i {
-        animation: fa-bounce 2s infinite; /* Ativa a animação */
+    animation: fa-bounce 2s infinite; /* Ativa a animação */
     --fa-bounce-height: -0.2em; /* Altura do pulo */
     --fa-bounce-jump-scale-x: 1;
     --fa-bounce-jump-scale-y: 1;
